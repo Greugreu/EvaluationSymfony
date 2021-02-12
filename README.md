@@ -13,9 +13,7 @@ Dependencies:
   1. [Downdload](https://symfony.com/download)
   
 #### PHP (recommended)
-  1. Install [Mamp](https://www.mamp.info/en/downloads/) for MacOS 
-  2. Install [Wamp](https://www.wampserver.com/) for Windows
-  3. Install [Xampp](https://www.apachefriends.org/fr/index.html) for Linux
+  1. Install [laragon](https://laragon.org/)
  
 #### Composer
   1. [Downdload](https://getcomposer.org/)
@@ -23,7 +21,8 @@ Dependencies:
   
 ## Execution
  
-  1. Open a command prompt at the root of the project
+  1. Clone repos in `C:\laragon\www`
+  2. Open Console in project folder
   2. Check if your computer meets all requirements `$ symfony check:requirements`
   3. Run `composer require update` to download packages
   2. Run server `$ php bin/console server:start`
