@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CategoryController!{% endblock %}
+
+{% block body %}
+    <style>
+        .example-wrapper {
+            margin: 1em auto;
+            max-width: 800px;
+            width: 95%;
+            font: 18px/1.5 sans-serif;
+        }
+
+        .example-wrapper code {
+            background: #F5F5F5;
+            padding: 2px 6px;
+        }
+    </style>
+
+    <div class="example-wrapper">
+        {% for data in datas %}
+            <section>
+                <a class="categoryTitle" href="{{ path('movies', {slug: data.name}) }}">{{ data.name }}</a>
+                <div class="movie">
+                    {% for movie in movies %}
+                        <div class="movie">
+                            <h3 class="movieTitle">{{ movie.name }}</h3>
+                            <p>{{ movie.year }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </section>
+        {% endfor %}
+    </div>
+{% endblock %}

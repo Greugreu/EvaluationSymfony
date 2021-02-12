@@ -25,7 +25,7 @@ class Actor
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Movie::class, mappedBy="Actors")
+     * @ORM\ManyToMany(targetEntity=Movie::class, mappedBy="Actors", cascade={"persist"})
      */
     private $movies;
 

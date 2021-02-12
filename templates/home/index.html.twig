@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+    {% for data in datas %}
+        {{ data.name }}
+    {% endfor %}
+{% endblock %}
