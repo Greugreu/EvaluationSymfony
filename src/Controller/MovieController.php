@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Movie;
 use App\Form\MovieFormType;
+use App\Repository\CategoryRepository;
 use App\Repository\MovieRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -31,12 +32,14 @@ class MovieController extends AbstractController
     /**
      * @Route("/movies/{category}", name="{category}")
      * @param MovieRepository $movieRepository
+     * @param CategoryRepository $categoryRepository
      * @param $category
      * @return Response
      */
-    public function showAllByCategory(MovieRepository $movieRepository, $category): Response
+    public function showAllByCategory(MovieRepository $movieRepository,CategoryRepository $categoryRepository, $category): Response
     {
-        $datas = $movieRepository->findBy(["Categories" => $category]);
+        $categoryId = $categoryRepository->findOneBy(["name" => $category]);
+        $datas = $movieRepository->findBy(["Categories" => $categoryId]);
 
         return $this->render('movie/index.html.twig', [
             'controller_name' => 'MovieController',
