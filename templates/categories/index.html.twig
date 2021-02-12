@@ -20,7 +20,7 @@
     <div class="example-wrapper">
         {% for data in datas %}
             <section>
-                <a class="categoryTitle" href="{{ path('movies', [data.name]) }}">{{ data.name }}</a>
+                <a class="categoryTitle" href="{{ path('movies', {'Category': data.name}) }}">{{ data.name }}</a>
                 <div class="movie">
                     {% for movie in movies %}
                         <div class="movie">
