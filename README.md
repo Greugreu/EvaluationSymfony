@@ -3,7 +3,7 @@
 School Symfony Framework Evaluation
 
 ## Technical Requirements
-In order to be able to run the application on your workstation, you must install the following dependencies:
+Dependencies:
   * Symfony
   * PHP 7.1 or higher
   * Composer
