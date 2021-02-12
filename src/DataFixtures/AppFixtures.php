@@ -44,7 +44,7 @@ class AppFixtures extends Fixture
 
 
         $hopkins = new Actor();
-        $hopkins->setName("Keanue Reeves");
+        $hopkins->setName("Anthony Hopkins");
         $hopkins->setCreatedAt(new \DateTime());
         $hopkins->addMovie($meetJoeBlack);
         $manager->persist($hopkins);
