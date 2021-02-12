@@ -19,13 +19,21 @@ class MovieRepository extends ServiceEntityRepository
         parent::__construct($registry, Movie::class);
     }
 
-    public function findAllOrderedByCategory($category){
+/*    public function findAllOrderedByCategory($category){
         return $this->createQueryBuilder('movie')
             ->select('movie.id','movie.name','movie.year')
             ->andWhere('movie.Categories = :val')
             ->setParameter('val', $category)
             ->getQuery()
             ->getOneOrNullResult();
+    }*/
+
+    public function findAllOrderedByCategory(){
+        return $this->createQueryBuilder('movie')
+            ->select('movie.id','movie.name','movie.year')
+            ->orderBy('movie.Categories')
+            ->getQuery()
+            ->getResult();
     }
 
     // /**

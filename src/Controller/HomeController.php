@@ -19,10 +19,9 @@ class HomeController extends AbstractController
     public function index(CategoryRepository $categoryRepository, MovieRepository $movieRepository): Response
     {
         $datas = $categoryRepository->findAll();
-        $movies = $movieRepository->findAllOrderedByCategory('Categories');
-
-        return $this->render('categories/index.html.twig', [
-            'controller_name' => 'CategoryController',
+        $movies = $movieRepository->findAllOrderedByCategory();
+        return $this->render('home/index.html.twig', [
+            'controller_name' => 'HomeController',
             'datas' => $datas,
             'movies' => $movies
         ]);
