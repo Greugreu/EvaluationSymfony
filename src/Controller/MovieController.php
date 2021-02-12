@@ -31,6 +31,7 @@ class MovieController extends AbstractController
     /**
      * @Route("/movies/{category}", name="{category}")
      * @param MovieRepository $movieRepository
+     * @param $category
      * @return Response
      */
     public function showAllByCategory(MovieRepository $movieRepository, $category): Response
