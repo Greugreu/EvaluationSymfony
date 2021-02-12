@@ -30,4 +30,4 @@ In order to be able to run the application on your workstation, you must install
   3. Open a browser at [http://localhost:8000](http://localhost:8000)
 
 
-For detailed explanation on how things work, check out [Synfony Docs](https://symfony.com/doc/4.4//index.html).
+For detailed explanation on how things work, check out [Symfony Documentation](https://symfony.com/doc/4.4//index.html).
