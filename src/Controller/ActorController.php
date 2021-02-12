@@ -11,6 +11,8 @@ class ActorController extends AbstractController
 {
     /**
      * @Route("/actor", name="actor")
+     * @param ActorRepository $actorRepository
+     * @return Response
      */
     public function index(ActorRepository $actorRepository): Response
     {
