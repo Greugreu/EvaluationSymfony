@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class MovieController extends AbstractController
 {
     /**
-     * @Route("/movies", name="movies")
+     * @Route("/movies/", name="movies")
      * @param MovieRepository $movieRepository
      * @return Response
      */
@@ -29,7 +29,22 @@ class MovieController extends AbstractController
     }
 
     /**
-     * @Route("/movie/new", name="movie_new")
+     * @Route("/movies/{category}", name="{category}")
+     * @param MovieRepository $movieRepository
+     * @return Response
+     */
+    public function showAllByCategory(MovieRepository $movieRepository, $category): Response
+    {
+        $datas = $movieRepository->findBy(["Categories" => $category]);
+
+        return $this->render('movie/index.html.twig', [
+            'controller_name' => 'MovieController',
+            'datas' => $datas
+        ]);
+    }
+
+    /**
+     * @Route("/movies/new", name="movie_new")
      * @param Request $request
      * @param EntityManagerInterface $manager
      * @param MovieRepository $movieRepository

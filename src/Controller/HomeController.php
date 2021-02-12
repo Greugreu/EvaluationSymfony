@@ -13,14 +13,13 @@ class HomeController extends AbstractController
     /**
      * @Route("/home", name="home")
      * @param CategoryRepository $categoryRepository
+     * @param MovieRepository $movieRepository
      * @return Response
      */
     public function index(CategoryRepository $categoryRepository, MovieRepository $movieRepository): Response
     {
         $datas = $categoryRepository->findAll();
         $movies = $movieRepository->findAllOrderedByCategory('Categories');
-
-        var_dump($movies);
 
         return $this->render('categories/index.html.twig', [
             'controller_name' => 'CategoryController',
