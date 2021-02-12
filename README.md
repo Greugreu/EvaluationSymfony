@@ -25,7 +25,7 @@ In order to be able to run the application on your workstation, you must install
  
   1. Open a command prompt at the root of the project
   2. Check if your computer meets all requirements `$ symfony check:requirements`
-  3. Run `composer require update`
+  3. Run `composer require update` to download packages
   2. Run server `$ php bin/console server:start`
   3. Open a browser at [http://localhost:8000](http://localhost:8000)
 
